@@ -25,6 +25,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       console.log(findContact);
       return findContact || null;
 
+
     case "add":
       const newContact = await contacts.addContact(name, email, phone);
       return console.log(newContact);
@@ -36,6 +37,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     default:
       console.warn("\x1B[31m Unknown action type!");
   }
-};
+};   
 
 invokeAction(argv);
